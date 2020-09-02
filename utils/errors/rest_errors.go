@@ -17,3 +17,12 @@ func NewBadRequestError(message string) *RESTErr {
 		Error:   "bad_request",
 	}
 }
+
+// NewNotFoundError - return pointer for RESTErr with NotFound Status and Error not_found
+func NewNotFoundError(message string) *RESTErr {
+	return &RESTErr{
+		Message: message,
+		Status:  http.StatusNotFound,
+		Error:   "not_found",
+	}
+}
